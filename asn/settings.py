@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@%(=e3p-+qlgq=akso+qp%#mrt$k-j*e-y$ww=uoq^@o*ls7)='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lab.clearcode.com.ng', 'atheist.org.ng']
 
 
 # Application definition
