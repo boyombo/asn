@@ -25,7 +25,7 @@ SECRET_KEY = '@%(=e3p-+qlgq=akso+qp%#mrt$k-j*e-y$ww=uoq^@o*ls7)='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lab.clearcode.com.ng', 'atheist.org.ng', 'localhost']
+ALLOWED_HOSTS = ['lab.clearcode.com.ng', 'atheist.org.ng', 'www.atheist.org.ng', 'localhost']
 
 
 # Application definition
