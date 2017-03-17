@@ -35,6 +35,11 @@ $(function () {
 <div id="wrap">
 	<!--CONTAINER-->
 	<div class="container">
+		{% if messages %}
+		  {%for msg in messages %}
+		  <h3>{{msg}}</h3>
+		  {% endfor %}
+		{% endif %}
 		<img src="{% static 'img/paperplane.png' %}" alt="Paper Plane" class="image-align" />
 		<h1>
 			<span>We are</span><br/>
@@ -42,9 +47,25 @@ $(function () {
 		</h1>
 		<p>Our site is currently <strong>under construction</strong> but we are working hard<br/> to create a new and fresh design.</p>
 		<div id="defaultCountdown"></div>
-		<form action="#">
-			<input type="text" name="email" id="email" value="Subscribe to fond out when we are done">
+		<form action="" method="POST">{% csrf_token %}
+			{% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+               {% endif %}
+
+			<div>
+                 {% if form.email.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+			<input type="text" name="email" id="id_email" placeholder="Enter you email to join">
+                {% comment %}{{ form.email }}{% endcomment %}
 			<input type="submit" value="GO!">
+              </div>
 		</form>
 		<p class="copyright">Produly designed by <a href="https://herowp.com" target="_blank">HeroWP.com</a></p>
 	</div>

@@ -25,7 +25,7 @@ SECRET_KEY = '@%(=e3p-+qlgq=akso+qp%#mrt$k-j*e-y$ww=uoq^@o*ls7)='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lab.clearcode.com.ng', 'atheist.org.ng']
+ALLOWED_HOSTS = ['lab.clearcode.com.ng', 'atheist.org.ng', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'member.apps.MemberConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'otherstatic'),
 )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

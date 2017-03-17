@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.views.generic import TemplateView
+from member import views as member_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home')
+    url(r'^$', member_views.home, name='home')
+    #url(r'^$', TemplateView.as_view(template_name='home.html'), name='home')
 ]
+
+admin.site.site_header = 'Atheist Society of Nigeria'
